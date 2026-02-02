@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 5px;
+        border-radius: 4px;
+      }
+      .images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        align-items: flex-start;
+      }
+      td:last-child {
+        min-width: 500px;
+        max-width: 600px;
+      }
+      .controls {
+        margin-bottom: 20px;
+      }
+      .pagination {
+        margin-top: 20px;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Product Management</h1>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search by title" />
+      <button id="sortPriceAsc">Sort Price Asc</button>
+      <button id="sortPriceDesc">Sort Price Desc</button>
+      <button id="sortNameAsc">Sort Name Asc</button>
+      <button id="sortNameDesc">Sort Name Desc</button>
+      <select id="pageSize">
+        <option value="5">5 per page</option>
+        <option value="10" selected>10 per page</option>
+        <option value="20">20 per page</option>
+      </select>
+    </div>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Images</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="pagination">
+      <button id="prevPage">Previous</button>
+      <span id="pageInfo"></span>
+      <button id="nextPage">Next</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
